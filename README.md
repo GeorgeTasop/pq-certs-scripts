@@ -7,7 +7,7 @@ This collection of scripts automates the generation of Post-quantum digital cert
 
 ## Prerequisites
 
-These scripts assume that OQS's fork of [OpenSSL](https://github.com/open-quantum-safe/openssl) is already installed in your system. If not, follow the [intructions](https://github.com/open-quantum-safe/openssl#quickstart) from their repository.
+These scripts assume that OQS's fork of [OpenSSL](https://github.com/open-quantum-safe/openssl) is already installed in your system. If not, follow the instructions provided [here](install_openssl_pq.md) OR follow the [intructions](https://github.com/open-quantum-safe/openssl#quickstart) from the original repository.
 
 ## Usage
 
