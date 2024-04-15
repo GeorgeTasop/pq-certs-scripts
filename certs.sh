@@ -6,7 +6,7 @@ set -e
 
 
 # User should set this path to OQS openssl install path
-openssl_d=''
+openssl_d='/home/gtasop/openssl_pq/openssl'
 
 if [[ ${openssl_d} == '' ]];
 then
@@ -73,14 +73,11 @@ then
 	if [[ ! -f PEM-TXT/ca-key.txt && ! -f PEM-TXT/ca-cert.txt ]];
 	then
 		echo "CA PEM-TXT files do not exist; creating them."
-		python3 Asn1-to-const.py PEM/ca-key.key
-		python3 Asn1-to-const.py PEM/ca-cert.crt
+		xxd -i PEM/ca-key.key > PEM-TXT/ca-key.txt
+		xxd -i PEM/ca-cert.crt > PEM-TXT/ca-cert.txt
 	fi
-	python3 Asn1-to-const.py PEM/${peer}-key.key
-	python3 Asn1-to-const.py PEM/${peer}-cert.crt
-
-	# Move everything to the appropriate folder
-	mv PEM/*.txt PEM-TXT
+	xxd -i PEM/${peer}-key.key > PEM-TXT/${peer}-key.txt
+	xxd -i PEM/${peer}-cert.crt > PEM-TXT/${peer}-cert.txt
 
 	# Convert everything from PEM format in DER format using the openssl program.
 	if [[ ! -f DER/ca-key.der && ! -f DER/ca-cert.der ]];
@@ -97,14 +94,11 @@ then
 	if [[ ! -f DER-TXT/ca-key.txt && ! -f DER-TXT/ca-cert.txt ]];
 	then
 		echo "CA DER-TXT files do not exist; creating them."
-		python3 Asn1-to-const.py DER/ca-key.der
-		python3 Asn1-to-const.py DER/ca-cert.der
+		xxd -i DER/ca-key.der > DER-TXT/ca-key.txt
+		xxd -i DER/ca-cert.der > DER-TXT/ca-cert.txt
 	fi
-	python3 Asn1-to-const.py DER/${peer}-cert.der
-	python3 Asn1-to-const.py DER/${peer}-key.der
-
-	# Move everything to the appropriate folder
-	mv DER/*.txt DER-TXT
+	xxd -i DER/${peer}-key.der > DER-TXT/${peer}-key.txt
+	xxd -i DER/${peer}-cert.der > DER-TXT/${peer}-cert.txt
 
 else
 	# Print error and exit
