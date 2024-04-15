@@ -24,7 +24,7 @@ cd certs
 git clone https://gitlab.com/g_tasop/pq-certificate-generation-scripts.git
 ```
 
-3. Edit the `certs.sh` at line 7 with the path of the installed `openssl` directory from OQS.
+3. Edit the `certs.sh` at line 9 with the path of the installed `openssl` directory from OQS.
 
 E.g: If the OQS is installed in `/home/user/oqs-openssl` then the path to `openssl_d` variable should be set to `/home/user/oqs-openssl`
 
