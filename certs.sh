@@ -6,7 +6,7 @@ set -e
 
 
 # User should set this path to OQS openssl install path
-openssl_d='/home/gtasop/openssl_pq/openssl'
+openssl_d=''
 
 if [[ ${openssl_d} == '' ]];
 then
