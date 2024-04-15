@@ -1,10 +1,12 @@
-#2 Notes on instsalling liboqs and openssl from OQS
+## Notes on installing liboqs and openssl from OQS
 
-1. `sudo apt install cmake gcc libtool libssl-dev make ninja-build git`
 
-2.  
+* Install these requiredpackages
+
+`sudo apt install cmake gcc libtool libssl-dev make ninja-build git`
+
+* Replace `<OPENSSL_DIR>` with the name of your choosing and run the following: 
 ```
-cd ~
 mkdir openssl_pq
 cd openssl_pq
 git clone --branch OQS-OpenSSL_1_1_1-stable https://github.com/open-quantum-safe/openssl.git <OPENSSL_DIR>
@@ -13,7 +15,9 @@ mkdir oqs
 
 ```
 
-3. ```
+3. Navigate to <OPENSSL_DIR> directory and run:
+
+```
 git clone --branch main https://github.com/open-quantum-safe/liboqs.git
 cd liboqs
 mkdir build && cd build
@@ -22,7 +26,8 @@ ninja
 ninja install
 ```
 
-4. Navigate to <OPENSSL_DIR> dir
+4. Navigate to <OPENSSL_DIR> directory and run:
+	
 ```
 ./Configure no-shared linux-x86_64 -lm
 make -j
