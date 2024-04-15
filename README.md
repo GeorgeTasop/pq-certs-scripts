@@ -21,7 +21,7 @@ cd certs
 2. Clone the scripts from this repository in this directory
 
 ```
-git clone https://gitlab.com/g_tasop/pq-certificate-generation-scripts.git
+git clone https://github.com/GeorgeTasop/pq-certs-scripts.git
 ```
 
 3. Edit the `certs.sh` at line 9 with the path of the installed `openssl` directory from OQS.
