@@ -99,4 +99,4 @@ dilithium2
 
 ## Acknowledgment
 
-The python script are provided by [gntouts](https://github.com/gntouts).
+The python script in previous versions were provided by [gntouts](https://github.com/gntouts).
